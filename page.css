@@ -18,7 +18,7 @@ body {
     position: relative;
     color: #FFFFFF;
     font-size: 4em;
-    text-shadow: 0 0 20px #CA3216;
+    animation: flicker 2s infinite;
 }
 #neon::after {
     content: attr(data-text);
@@ -27,4 +27,16 @@ body {
     position: absolute;
     color: #CA3216;
     z-index: -1;
+}
+
+@keyframes flicker {
+    0%, 70%, 100% {
+        text-shadow: 0 0 0px #CA3216;
+    }
+    20%, 40%, 80% {
+        text-shadow: 0 0 10px #CA3216;
+    }
+    10%, 60%, 90% {
+        text-shadow: 0 0 15px #CA3216;
+    }
 }
